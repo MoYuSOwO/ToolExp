@@ -1,0 +1,15 @@
+name: ToolExp
+version: '1.0.0'
+main: io.github.moyusowo.toolexp.ToolExp
+api-version: '1.21.4'
+authors: [ MoYuOwO ]
+description: ToolExp
+dependencies:
+  bootstrap:
+    NeoArtisan:
+      load: BEFORE
+      required: true
+  server:
+    NeoArtisan:
+      load: BEFORE
+      required: true
