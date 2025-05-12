@@ -1,6 +1,7 @@
 package io.github.moyusowo.toolexp;
 
 import com.destroystokyo.paper.event.player.PlayerPickupExperienceEvent;
+import io.github.moyusowo.neoartisanapi.api.attribute.AttributeRegistry;
 import io.github.moyusowo.neoartisanapi.api.item.ItemRegistry;
 import net.kyori.adventure.text.Component;
 import org.bukkit.NamespacedKey;
@@ -19,6 +20,7 @@ public final class ToolExp extends JavaPlugin implements Listener {
     public void onEnable() {
         exp = new NamespacedKey(this, "exp");
         getServer().getPluginManager().registerEvents(this, this);
+        AttributeRegistry.getAttributeRegistryManager().registerItemstackAttribute(exp, "double");
     }
 
     @EventHandler
