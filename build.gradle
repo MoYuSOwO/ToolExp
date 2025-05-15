@@ -21,7 +21,7 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
-    compileOnly 'com.github.MoYuSOwO:NeoArtisan:dev-version-SNAPSHOT:api'
+    compileOnly 'com.github.MoYuSOwO:NeoArtisan:v2.0.2:api'
 }
 
 tasks {

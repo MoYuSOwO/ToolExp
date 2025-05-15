@@ -24,7 +24,7 @@ public final class ToolExp extends JavaPlugin implements Listener {
         exp = new NamespacedKey(this, "exp");
         attack = new NamespacedKey(this, "attack");
         getServer().getPluginManager().registerEvents(this, this);
-        AttributeRegistry.getAttributeRegistryManager().registerItemstackAttribute(exp, "double");
+        AttributeRegistry.getAttributeRegistryManager().registerItemStackAttribute(exp, "double");
         PlayerAttributeRegistry.getPlayerAttributeRegistryManager().registerPlayerAttribute(attack, "int");
     }
 
@@ -33,14 +33,14 @@ public final class ToolExp extends JavaPlugin implements Listener {
         Player player = event.getPlayer();
         ItemStack hand = player.getInventory().getItemInMainHand();
         if (hand.getType().name().contains("SWORD")) {
-            if (ItemRegistry.getItemRegistryManager().getItemstackAttributeValue(hand, exp) == null) {
+            if (ItemRegistry.getItemRegistryManager().getItemStackAttributeValue(hand, exp) == null) {
                 double expCount = base + event.getExperienceOrb().getExperience();
-                ItemRegistry.getItemRegistryManager().setItemstackAttributeValue(hand, exp, expCount);
+                ItemRegistry.getItemRegistryManager().setItemStackAttributeValue(hand, exp, expCount);
                 player.sendMessage(Component.empty().content("当前武器经验: " + expCount));
             } else {
-                double expCount = ItemRegistry.getItemRegistryManager().getItemstackAttributeValue(hand, exp);
+                double expCount = ItemRegistry.getItemRegistryManager().getItemStackAttributeValue(hand, exp);
                 expCount += event.getExperienceOrb().getExperience();
-                ItemRegistry.getItemRegistryManager().setItemstackAttributeValue(hand, exp, expCount);
+                ItemRegistry.getItemRegistryManager().setItemStackAttributeValue(hand, exp, expCount);
                 player.sendMessage(Component.empty().content("当前武器经验: " + expCount));
             }
         }
